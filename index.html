@@ -51,18 +51,18 @@ const ctx = canvas.getContext("2d");
 const opts = {
   smoothing: 0.36,
   fft: 8,
-  minDecibels: -25,
+  minDecibels: -32,
   scale: 0.2,
-  glow: 58,
+  glow: 74,
   color1: [212,68,119],
   color2: [43,200,38],
   color3: [24,137,218],
   fillOpacity: 0.52,
   lineWidth: 0,
   blend: "screen",
-  shift: 91,
-  width: 35,
-  amp: 4
+  shift: 33,
+  width: 25,
+  amp: 2.1
 };
 
 // Interactive dat.GUI controls
@@ -268,31 +268,4 @@ function start() {
   navigator.getUserMedia({ audio: true }, onStream, onStreamError);
 }
 
-</script>
-
-<script>
-
-navigator.getUserMedia (
-   // constraints
-   {
-      video: true,
-      audio: true
-   },
-
-   // successCallback
-   function(localMediaStream) {
-      var video = document.querySelector('video');
-      video.src = window.URL.createObjectURL(localMediaStream);
-      video.onloadedmetadata = function(e) {
-         // Do something with the video here.
-      };
-   },
-
-   // errorCallback
-   function(err) {
-    if(err === PERMISSION_DENIED) {
-      // Explain why you need permission and how to update the permission setting
-    }
-   }
-);
 </script>
